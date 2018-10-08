@@ -1,0 +1,69 @@
+<apex:page sidebar="false" showHeader="false" controller="cCustomLookupToVF">
+    <apex:form id="myForm">
+    <script>
+        function openLookup(BaseUrl,width,modified,searchstr)
+        {
+            //alert(Param4);
+           // /_ui/common/data/LookupPage?lkfm=j_id0%3AmyForm&lknm=j_id0%3AmyForm%3Aj_id2%3AIdForAccount&lktp=001
+           //lknm=j_id0%3AmyForm%3Aj_id2%3AIdForAccount
+           
+           var receivedUrl=BaseUrl;
+           var receivedwidth=width;
+           var receivedmodified=modified;
+           var receivedsearchstr=searchstr;
+           
+           var lookuptype=receivedUrl.substr(receivedUrl.length-3,3);
+           if(receivedmodified=='1')
+           {
+               BaseUrl=BaseUrl+searchstr;
+           }
+           
+           if(lookuptype=='001')
+           {
+               var urlArr=BaseUrl.split("&");
+               //----If you are using this in inline editing then it would be var NxtSpltArr=urlArr[0].split("="); -----------
+               var NxtSpltArr=urlArr[1].split("=");
+               var txtfrmarr=NxtSpltArr[1];
+               alert(txtfrmarr);
+               
+               if(txtfrmarr.indexOf('IdForAccount')> -1)
+               {
+                   BaseUrl="/apex/GlobalSearchAccount_With_Parameter?AccountTypeSearchOption=personaccount&txt="+txtfrmarr;
+                   //alert(BaseUrl);
+                   BaseUrl=BaseUrl + "&frm=" + escapeUTF("{!$Component.myForm}");
+                   BaseUrl=BaseUrl + "&lksearch=" + searchstr;
+               }
+               
+               
+               
+               if(txtfrmarr.indexOf('IdToAccount')> -1)
+               {
+               BaseUrl="/apex/GlobalSearchAccount_With_Parameter?AccountTypeSearchOption=businessaccount&txt="+txtfrmarr;
+               BaseUrl=BaseUrl + "&frm=" + escapeUTF("{!$Component.myForm}");
+               BaseUrl=BaseUrl + "&lksearch=" + searchstr;
+               }
+           }
+           openPopup(BaseUrl,"lookup",950,480,"width=1420,height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no",true);
+           
+        }
+    </script>
+        <apex:pageBlock title="Change account parent chnage request"> 
+           <div style="width:900px;margin:auto;background-color:#ffffff;padding-bottom:10px;padding-left:30px;padding-right:30px;padding-top:10px;box-shadow:0px 10px 20px 3px #d3d3d3;">  
+                <apex:outputPanel > 
+                       <table width="100%">
+                           <tbody>
+                               <tr >
+                                     <td align="right">Person Account (For Account)</td>
+                                     <td><apex:inputField value="{!dcrObj.Change_for_Account__c}" id="IdForAccount"/></td>
+                               </tr>
+                                <tr >
+                                     <td align="right">Business Account(To Account)</td>
+                                     <td><apex:inputField value="{!dcrObj.Change_To_Account__c}" id="IdToAccount"/></td>
+                               </tr>
+                           </tbody>
+                       </table>
+                </apex:outputPanel>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

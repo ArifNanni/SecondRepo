@@ -1,0 +1,8 @@
+<apex:page standardController="Case">
+
+<p>You cannot create an opportunity from here</p>
+<apex:form >
+<apex:commandbutton action="{!cancel}" value="Return" rerender=""/>
+</apex:form>
+
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page controller="MyController90">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  
+  <apex:form >
+  <apex:inputText value="{!someValue}" />
+  <apex:inputText value="{!someValue1}" />
+ <apex:commandButton action="{!incrementCounter}" value="Count!" />
+ </apex:form>
+</apex:page>

@@ -1,0 +1,92 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="true" controller="Jquery" applyBodyTag="false" docType="html-5.0">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> -->
+            <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+            <apex:includeScript value="/support/console/42.0/integration.js"/>
+            
+            
+            
+            <apex:slds />
+      </head>
+      
+       <style>
+       
+       </style>
+            
+       <script>    
+            var $j = jQuery.noConflict();
+            
+            function callPlaceOrder()
+            {
+              alert('Row:'+$j(".a").val());
+               var a = '98765';
+               
+               alert('ZIP :'+$j(".zip").val());
+                 $j(".zip").val(a);
+               alert('ZIP :'+$j(".zip").val());
+               alert('ZIP :'+$j(".zip").val("{!strZip}").val());
+               
+            }
+       </script>     
+       
+       <body>
+
+        <apex:form >
+         
+          <div class="slds-scope" style="margin-bottom:20px width:100%">
+                    <!--SPINNER-->
+                    <apex:outputPanel id="spinner">
+                        <div class="slds-spinner_container slds-is-fixed slds-hide" style="z-index:99" id="spinner">
+                            <div role="status" class="slds-spinner slds-spinner--medium">
+                                <span class="slds-assistive-text">Loading</span>
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </apex:outputPanel>
+                    
+                     <!-- AUTHENTICATION FAIL MODAL STARTS -->
+                        <apex:outputPanel id="authenticationFailModalPage">
+                            <div class="model-container"  style="min-height: 10%;max-width: 70%;">
+                                <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal <!-- slds-fade-in-open slds-backdrop--open -->" id="authenticationFailModalDialog">
+                                    <div class="slds-modal__container" >
+                                        <div class="slds-modal__header" >
+                                            <h2 id="header43" class="slds-text-heading--medium slds-theme--error">Failed Authentication </h2>
+                                        </div>
+                                        <div class="slds-modal__content slds-p-around--medium slds-scrollable" id="modalContent">
+                                            <div>The caller has failed authentication and the supervisors have been notified. Please contact your supervisor.</div> 
+                                            <br/><br/>
+                                            <div><center><button class="slds-button slds-button--neutral" id="closeModalButton" onClick="closeFailModal()">OK</button></center></div>       
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-backdrop" id="authenticationFailModalBackdrop"></div> 
+                            </div>
+                        </apex:outputPanel>
+                        Text Box 
+                        <apex:inputText id="zip" value="{!strZip}" styleClass="slds-text zip"/>
+                        <br/>
+                         <apex:variable var="index" value="{!1}"/>   
+                                 <apex:repeat value="{!acclist}" var="item">
+                                 <apex:variable value="{!index+1}" var="index"/>
+                                 <input  id ="a{!index}" type="text" value="{!item.name}" styleClass="slds-text a"/>
+                                 
+                                 
+                                 </apex:repeat>
+                         <br/>        
+                        <apex:selectList size="1" value="{!strZip}" style="width: 200px;" onchange="lostCardAddressChange(); return false;" styleClass="slds-select deliveryAddress">
+                                                                                <apex:selectOption itemValue="Primary" itemLabel="Primary"/>
+                                                                                <apex:selectOption itemValue="Billing" itemLabel="Billing"/>
+                                                                            </apex:selectList>
+                         <button class="slds-button slds-button_brand placeOrderButton" onclick="callPlaceOrder(); return false;">Check</button>
+                         <br/>
+                                
+                               
+                    
+                         
+           </div>       
+        </apex:form>     
+     </body>
+  </html>
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page controller="exampleCon7">
+<script>
+function se
+</script>
+    <apex:form >
+    
+        <apex:outputpanel layout="inline" id="counter"  >
+            <apex:inputText value="{!count}"   />
+                <apex:actionSupport event="onclick" action="{!incrementCounter}" rerender="counter" status="counterStatus" />
+        </apex:outputpanel>
+        <apex:actionStatus id="counterStatus" startText="incrementing.." stopText=" done" />
+    </apex:form>
+</apex:page>

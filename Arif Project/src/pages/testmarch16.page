@@ -1,0 +1,11 @@
+<apex:page >
+    
+Render a VF page based on a criteria
+<apex:pageBlock id="xxxpb1">
+
+  <apex:pageBlockSection >
+    <apex:outputText rendered="false" >hi</apex:outputText> 
+  </apex:pageBlockSection>
+  
+</apex:pageBlock>
+</apex:page>

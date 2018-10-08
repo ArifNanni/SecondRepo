@@ -1,0 +1,16 @@
+<apex:page id="A" >
+<apex:includeScript value="{!$Resource.example}" />
+
+<apex:form id="B">
+<apex:inputText id="c" onchange="A()"/>
+
+<script >
+
+
+</script>
+<apex:pageblock id="d">
+<apex:inputText id="e"/>
+</apex:pageblock>
+</apex:form>
+ 
+</apex:page>

@@ -1,0 +1,32 @@
+<apex:page >
+<style>
+
+  .B {
+   color : Green;
+  }
+  
+  .A {
+   color : red;
+   font-size : 8px;
+  }
+  .ABCD  {display:none}
+  
+  .C {
+  color : pink
+  }
+  </style>
+  <script>
+  window.onload = function() {
+   // var element = document.getElementById("myDIV");
+ //  alert('ok');
+    document.getElementsByClassName("B")[0].classList.add('ABCD');
+   // document.getElementsByClassName("C")[0].classList.remove('ABCD');
+  //   document.getElementByClass("myDIV").classList.remove("C");
+};
+  </script>
+  
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1 id="myDIV" class="  C B A"> Congratulations</h1>
+  This is your new Page: sample786
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

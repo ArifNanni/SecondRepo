@@ -1,0 +1,13 @@
+<apex:page controller="Account2">
+<apex:pageBlock title="Hello {!$User.FirstName}!">
+<apex:form >
+<apex:pageBlockSection title="np" >Hellllo</apex:pageBlockSection>
+  hello!
+  </apex:form>
+  </apex:pageBlock>
+  <apex:pageBlock title="Hello {!$User.FirstName}!">
+<apex:form >
+  
+  </apex:form>
+  </apex:pageBlock>
+</apex:page>

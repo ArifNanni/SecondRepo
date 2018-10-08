@@ -1,0 +1,33 @@
+<apex:page >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <html>
+<head>
+
+
+
+</head>
+
+
+<body>
+
+
+<input type="button" id="ABC" value="Click me" onclick="msg()"/>
+<script>
+function msg(){
+alert('HI');
+$(document).ready(function(){
+ $('#ABC').click(function ()
+ {
+  
+   alert('jquery');
+ });
+ });
+ }
+ 
+ 
+alert('js');
+</script>
+
+</body>
+</html>
+</apex:page>

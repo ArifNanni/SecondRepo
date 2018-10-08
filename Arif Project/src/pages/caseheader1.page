@@ -1,0 +1,18 @@
+<apex:page standardcontroller="Account" sidebar="false"
+           showHeader="false"
+           showChat="false">
+<style>
+div.message.won{
+color : white;
+background : red;
+}
+</style>
+  <div class="won message" style="display: {!if(Account.Name = 'Hello','block','none')}">
+  <h1>hey it is in hold web status </h1>
+  </div>
+  
+  <apex:pageMessage summary="This pageMessage for the supporter" 
+                  severity="warning" 
+                  strength="3"
+                  rendered="{!Account.name = 'Hello'}" />
+</apex:page>

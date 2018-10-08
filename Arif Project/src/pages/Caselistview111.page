@@ -1,0 +1,7 @@
+<apex:page StandardController="Account" extensions="myControllerExtension12">
+<apex:form >
+<apex:commandButton action="{!save1}" value="asdf"/>
+</apex:form>
+    
+
+</apex:page>

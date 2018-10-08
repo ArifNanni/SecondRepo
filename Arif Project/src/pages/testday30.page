@@ -1,0 +1,10 @@
+<apex:page showHeader="false" standardStylesheets="false">
+<h1>Testing Custom Stylesheets</h1>
+<apex:stylesheet value="{!$Resource.cusTOmCSs}" />
+
+<p>This text could go on forever...<br/><br/>
+But it won't!</p>
+<apex:outputLink value="http://www.salesforce.com" styleClass="newLink">
+Click here to switch to www.salesforce.com
+</apex:outputLink>
+</apex:page>

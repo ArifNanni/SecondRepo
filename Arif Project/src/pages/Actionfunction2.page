@@ -1,0 +1,36 @@
+<apex:page controller="Controller">
+  <script>
+  function complete()
+  {
+   var a = '{!text2}';
+   alert('hi'+a);
+  }
+  function second1()
+  {
+  alert('hi');
+  first1();
+  
+  }
+  </script>
+  <apex:outputPanel id="abcd"> 
+    <apex:outputtext value="{!text1}"/>
+    <apex:outputtext value="{!text2}"/>
+ </apex:outputPanel>
+     <input type="button" value="Verify CVV Code" onclick="second1();"/>
+    <apex:form >
+        <apex:actionFunction action="{!first}" name="first1" reRender="abcd" oncomplete="complete();"/>
+        <apex:actionFunction action="{!createFruitList}" name="generateFruits" reRender="abcd" />
+        <br/>
+        Select the Alphabet:
+        <apex:selectList id="selAlphabets" value="{!SelectedAlphabet}" size="1" onchange="generateFruits()" >
+            <apex:selectOptions value="{!Alphabets}">
+            </apex:selectOptions>
+        </apex:selectList>
+        <br/> 
+        Select the Fruit:
+        <apex:selectList id="selFruits" size="1">
+            <apex:selectOptions value="{!Fruits}">
+            </apex:selectOptions>
+        </apex:selectList>           
+    </apex:form>
+</apex:page>

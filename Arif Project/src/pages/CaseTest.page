@@ -1,0 +1,15 @@
+<apex:page standardController="Case"
+  recordSetVar="cases"
+   extensions="quickEmailController"
+>
+  <apex:form >
+     <apex:pageBlock >
+       <apex:pageBlockTable value="{!selected}"  var="case">
+         <apex:column value="{!case.id}"/>
+       </apex:pageBlockTable>
+       <apex:pageBlockButtons location="bottom">
+         <apex:commandButton value="Do Something" />
+       </apex:pageBlockButtons>
+     </apex:pageBlock>
+  </apex:form>
+</apex:page>

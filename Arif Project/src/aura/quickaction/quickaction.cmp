@@ -1,0 +1,4 @@
+<aura:component implements="force:lightningQuickAction" >
+	<p>Case goes here</p>
+    <c:CaseList />
+</aura:component>

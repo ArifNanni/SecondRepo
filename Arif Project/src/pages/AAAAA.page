@@ -1,0 +1,8 @@
+<apex:page controller="OppsController8">
+<apex:form >
+<apex:commandButton value="save" action="{!save}"/>
+Hi <apex:inputText value="{!var1}"/>    <br/>
+Hi <apex:outputText value="{!var2}"/>
+
+</apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page controller="Example3" >
+<apex:form >
+<apex:pageblock title="malculator">
+<apex:pageblockTable value="{!myval}" var="a">
+<apex:column value="{!a.name}"/>
+
+<apex:column value="{!a.industry}"/>
+
+</apex:pageblockTable>
+
+
+<apex:outputlabel >{!myval}</apex:outputlabel>
+
+
+ </apex:pageblock>
+ </apex:form>
+</apex:page>

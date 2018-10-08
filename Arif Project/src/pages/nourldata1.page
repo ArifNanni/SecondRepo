@@ -1,0 +1,13 @@
+<apex:page controller="PagesController">
+    <apex:form >
+        <apex:pageBlock title="Page 1" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Page 2" action="{!page2}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Section" columns="2">
+                <apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Contact.FirstName}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

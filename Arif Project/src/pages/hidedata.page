@@ -1,0 +1,103 @@
+<apex:page controller="Test57">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<apex:includeScript value="/support/console/42.0/integration.js"/>
+
+<apex:slds />
+</head>
+
+<script>
+//alert('HI');
+
+function switchbutton(res){
+                        var classList = document.getElementById('switchbutton_Trans'+res).className.split(/\s+/);
+                        for (var i = 0; i < classList.length; i++) {
+                            if (classList[i] === 'slds-is-open') {
+                                 
+                                $('.switchclass_Trans'+res).removeClass('slds-is-open');
+                            }
+                            else{
+                                $('.switchclass_Trans'+res).addClass('slds-is-open');
+                            } 
+                        }
+                    }
+
+$(document).ready(function(){alert('HI')
+var d= $(".ansA").get();
+var d1= $(".ansA").get().length;
+alert('lenght'+d1);
+for(i=0;i<d.length;i++)
+{
+alert('outloop'+d[i] );
+ if(d[i].innerText.indexOf('<br/>') != -1)
+  {
+   alert('inloop'+d[i].innerHTML );
+      d[i].innerHTML = d[i].innerText;
+  }
+}
+//alert('++'+d);
+//for()
+
+//alert('Hello');
+var classList = document.getElementById('switchbutton_Trans').className.split(/\s+/);
+//alert('dfg'+classList );
+
+}); 
+
+</script>
+<body>
+<apex:variable var="count" value="{!1}" />
+<div class=" entirediv slds-scope">
+<div class="slds-section  switchclass_Trans1 " id="switchbutton_Trans1" >
+  <h3 class="slds-section__title">
+   
+                                <button aria-controls="fis" aria-expanded="true" class="slds-button slds-section__title-action" onclick="switchbutton({!count})">
+                                    <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+                        <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#account')}"></use>
+             
+                                     <!--   <use
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.iconfinder.com/icons/181419/loading_reload_slow_throbber_update_wait_waiting_icon#size=128" /> -->
+                                        </svg>
+                                        <span class="slds-truncate" title="FIS Services">click before it</span>
+                                    </button>
+                             </h3>
+<div aria-hidden="false" class="slds-form-element slds-card__body slds-section__content " id="fis">
+  <output type="text" style="white-space: normal" class="ansA">{!abcd} </output>
+  <br/>
+  <output   type="text" id="ZABC" style="white-space: normal" class="ansA BV">{!abcd} </output>
+  <output type="text" style="white-space: normal" class="ansA">ABCD </output> <br/>
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  </div>
+  </div>
+  </div>
+  Hello
+<div class=" entirediv slds-scope">
+<div class="slds-section  switchclass_Trans2 " id="switchbutton_Trans2" >
+  <h3 class="slds-section__title">
+  <apex:variable value="{!count+1}" var="count"/>
+                                <button aria-controls="fis" aria-expanded="true" class="slds-button slds-section__title-action" onclick="switchbutton({!count})">
+                                    <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+                        <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#account')}"></use>
+             
+                                     <!--   <use
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.iconfinder.com/icons/181419/loading_reload_slow_throbber_update_wait_waiting_icon#size=128" /> -->
+                                        </svg>
+                                        <span class="slds-truncate" title="FIS Services">click before it</span>
+                                    </button>
+                             </h3>
+<div aria-hidden="false" class="slds-form-element slds-card__body slds-section__content " id="fis">
+  <output type="text" style="white-space: normal" class="ansA">{!abcd} </output>
+  <br/>
+  <output   type="text" id="ZABC" style="white-space: normal" class="ansA BV">{!abcd} </output>
+  <output type="text" style="white-space: normal" class="ansA">ABCD </output> <br/>
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  </div>
+  </div>
+  </div>
+  Hello
+
+  </body>
+   </html>                                    
+</apex:page>

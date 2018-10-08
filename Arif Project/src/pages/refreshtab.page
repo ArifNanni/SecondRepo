@@ -1,0 +1,50 @@
+<apex:page standardController="Case" extensions="YOUR_REMOTE_CONTROLLER" cache="false" rendered="true" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">   
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+        
+        <script src="/soap/ajax/38.0/connection.js" type="text/javascript"/>
+        <script src="/soap/ajax/38.0/apex.js" type="text/javascript"/>
+        <script type="text/javascript">
+                             
+                var caseId = '{!Case.Id}';
+                var caseStatus = '{!Case.Status}';                          
+        
+                function clickButtonFunction() {
+                    // Call your Remote Function
+                    
+                    Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.YOUR_REMOTE_CONTROLLER.Click_Button}', caseId,
+                        function(result, event) {
+                            if (event.status) {
+                                // Refresh
+                                if (sforce.one != undefined) {
+                                    // Lightning
+                                    sforce.one.navigateToSObject(caseId);
+                                } else {
+                                    // Classic
+                                    window.parent.location = '/' + caseId;
+                                }
+                            }
+                            else {
+                                alert (event.message);
+        
+                            } 
+                        });
+                }
+                
+                
+        </script>
+    </head>
+   <body >
+            <div>
+     <button class="slds-button slds-button--neutral" onclick="clickButtonFunction()" id="ButtonId">
+        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--left">
+            
+        </svg>Button</button>
+            
+        </div>          
+    </body>
+</html>
+</apex:page>

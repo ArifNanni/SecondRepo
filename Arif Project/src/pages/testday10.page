@@ -1,0 +1,10 @@
+<apex:page standardController="Postion__c" extensions="contactq" >
+  
+  <apex:tabPanel >
+  <apex:tab >
+  <apex:relatedList subject="{!Postion__c}"
+list="Job_Application__c" />
+  
+  </apex:tab>
+  </apex:tabPanel>
+</apex:page>

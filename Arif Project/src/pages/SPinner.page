@@ -1,0 +1,20 @@
+<apex:page >
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<apex:slds />
+  <head>
+  </head>
+  <body>                
+                 <apex:outputPanel id="spinner">
+                        <div class="slds-spinner_container slds-is-fixed slds-show" style="z-index:99" id="spinner">
+                            <div role="status" class="slds-spinner slds-spinner--medium">
+                                <span class="slds-assistive-text">Loading</span>
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </apex:outputPanel>
+                    
+                   
+</body>
+</html>
+</apex:page>

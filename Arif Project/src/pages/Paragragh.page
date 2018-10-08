@@ -1,0 +1,21 @@
+<apex:page controller="p3p">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+  <br/>
+  <apex:pageBlock >
+  <apex:pageBlockTable value="{!asd1}" var="item">
+  <apex:column >
+  <apex:outputText id="abc" value="{!item}"/>
+  
+  <script>
+  alert(''+document.getElementById("j_id0:j_id2:j_id3:0:abc").innerText);
+  document.getElementById("j_id0:j_id2:j_id3:0:abc").innerHTML = document.getElementById("j_id0:j_id2:j_id3:0:abc").innerText;
+  </script>
+  </apex:column>
+  
+  
+  </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page controller="OppsController2">
+<apex:form >
+<apex:commandButton value="save" action="{!save}"/>
+Hi <apex:inputText value="{!ab}"/>    
+Hi <apex:outputText value="{!abc}"/>
+<input type="text" name="firstname" value="Mickey"/>
+<select name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+ 
+</select>
+<apex:selectRadio ></apex:selectRadio>
+<apex:selectRadio ></apex:selectRadio>
+</apex:form>
+</apex:page>

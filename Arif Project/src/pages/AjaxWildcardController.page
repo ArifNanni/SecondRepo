@@ -1,0 +1,32 @@
+<apex:page controller="AjaxWildcardController" >
+<script>
+function aa(){
+var a = {!size};
+
+alert(a);}
+</script>
+  <apex:form >
+      <apex:pageBlock >
+        Type Account Name Here :<apex:inputText value="{!inputtext}" onchange="aa();">
+          <apex:actionSupport action="{!actionSupMethod}" event="onkeyup" reRender="outputText,Arif" />
+        </apex:inputtext>
+      </apex:pageBlock>  
+
+    <apex:pageblock >
+      <apex:pageblocktable value="{!accList}" var="acc" id="outptText">
+      
+        <apex:column headerValue="Acc name"><apex:actionRegion > <apex:outputText value="{!acc.name}" /></apex:actionRegion> </apex:column>
+        <apex:column value="{!acc.accountnumber}"/>
+        
+      </apex:pageblocktable>
+      <apex:pageBlockButtons >
+      <apex:commandButton action="{!save}" value="save"/>
+      </apex:pageBlockButtons>
+      
+    </apex:pageblock>
+    <apex:outputText value="-----aaaaaa"> -----aa</apex:outputText>
+    
+  </apex:form>
+  <br/>
+  <apex:outputText id="Arif" value="{!size}"> Total no of records  </apex:outputText>
+</apex:page>

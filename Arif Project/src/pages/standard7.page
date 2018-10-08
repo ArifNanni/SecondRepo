@@ -1,0 +1,5 @@
+<apex:page standardController="Account"  tabstyle="account" sidebar="false" extensions="aaaaa">
+    <apex:pageBlock >
+        
+     </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,8 @@
+<apex:page controller="exampleCon">
+   
+        <apex:outputText value="Loading......" id="counter"/>
+        
+       
+    
+
+</apex:page>

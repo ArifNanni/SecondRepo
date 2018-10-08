@@ -1,0 +1,10 @@
+<apex:page standardController="Postion__c" >
+<apex:form >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  <apex:outputField value="{!Postion__c.Max_Pay__c}"/>
+   <apex:inputField value="{!Postion__c.Min_Pay__c}"/>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+  </apex:form>
+</apex:page>

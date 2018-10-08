@@ -1,0 +1,18 @@
+<apex:page standardController="Account" extensions="AccountExtension">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:form >
+      <apex:pageBlock >
+      <apex:pageBlockButtons location="both">
+                  <apex:commandButton value="Save" action="{!saveAccount}"/>
+                  <apex:commandButton value="Cancel" immediate="true" action="{!cancelPage}"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection >
+             <apex:inputField value="{!account.name}"/>
+             <apex:inputfield value="{!account.Type}" required="true"/>
+      </apex:pageBlockSection>
+      <apex:outputText value="Account Added" rendered="{!isAdded}"/>
+      <apex:outputText value="Account Not Added" rendered="{!isCancel}"/>
+      </apex:pageBlock>
+ </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

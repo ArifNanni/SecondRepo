@@ -1,0 +1,4 @@
+<apex:page standardController="Opportunity" >
+Hi
+<apex:outputField value="{!Opportunity.name}"/>
+</apex:page>

@@ -1,0 +1,8 @@
+<apex:page controller="setdirect1">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: this is other page
+  <br/>
+  <apex:outputtext > {!abcde}</apex:outputtext>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

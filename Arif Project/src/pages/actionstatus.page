@@ -1,0 +1,51 @@
+<apex:page id="all" controller="exampleCon5" standardStylesheets="false">
+    <apex:form id="all1">
+    
+    <apex:pageblock id="abcx" >
+         <apex:pageBlockTable id="dd" value="{!S1}" var="sd">
+         
+          <apex:column id="asw">
+          <apex:outputPanel >
+          <apex:actionSupport event="onclick" rerender="detail">
+           {!sd.name}
+           <apex:param name="cid" value="{!sd.id}"/>
+
+           </apex:actionSupport>
+                 </apex:outputPanel>
+          </apex:column>
+         
+         </apex:pageBlockTable>
+    </apex:pageblock>
+    
+        <apex:outputText value="Watch this counter: {!count}" id="counter"/>
+        <apex:actionStatus id="counterStatus">
+            <apex:facet name="start">
+        <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.65;width:100%;">
+        
+            
+            <div class="waitingHolder" style="top: 100px; width: 91px;">
+            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+            <span class="waitingDescription">Loading...</span>
+            </div>
+        </div>
+    </apex:facet>
+    </apex:actionstatus>
+
+        <apex:actionPoller action="{!incrementCounter}" rerender="counter,{!$Component.all1}"
+            status="counterStatus" interval="05" />
+            
+            <br/>
+            
+            
+            
+            
+    </apex:form>
+    <apex:outputPanel id="detail">
+<apex:actionStatus startText="Requesting...">
+<apex:facet name="stop">
+<apex:detail subject="{!$CurrentPage.parameters.cid}"
+relatedList="false" title="false"/>
+</apex:facet>
+</apex:actionStatus>
+</apex:outputPanel>
+</apex:page>

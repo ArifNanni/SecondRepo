@@ -1,0 +1,20 @@
+<apex:page standardController="Contact" recordSetVar="accounts1" extensions="asdf">
+<apex:form >
+<apex:inputText id="search" value="{!search}"/>
+ <apex:commandButton value="fetch" action="{!save1}"/>
+
+<apex:pageBlock >
+<apex:pageBlockTable value="{!accounts1}" var="a" >
+  <apex:column value="{!a.name}"/>
+      <apex:column value="{!a.Id}"/>
+     <apex:column ><apex:inputfield value="{!a.MobilePhone}"/> </apex:column>
+    <apex:column value="{!a.Birthdate}"/>  
+    
+    </apex:pageBlockTable>
+</apex:pageBlock>
+       
+
+</apex:form>
+
+
+</apex:page>

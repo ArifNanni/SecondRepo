@@ -1,0 +1,13 @@
+<apex:page controller="a" docType="html-5.0" >
+<apex:form >
+<apex:pageBlock > 
+<apex:pageBlockSection >
+<apex:pageBlockSectionItem >
+<apex:input type="number" required="true" value="{!qw}" title="Enter Text" />
+<c:asas ></c:asas>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

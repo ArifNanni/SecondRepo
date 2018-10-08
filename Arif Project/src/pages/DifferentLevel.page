@@ -1,0 +1,14 @@
+<apex:page controller="differentlevelclass">
+
+<Script>
+var d = '{!a}';
+  alert(d);
+</Script>
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:form >
+  <apex:inputText value="{!a}"/>
+  <apex:commandButton value="save" action="{!save}"/>
+  </apex:form>
+<apex:outputText >{!a1}</apex:outputText>
+</apex:page>

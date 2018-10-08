@@ -1,0 +1,11 @@
+<apex:page controller="map1">
+<apex:repeat value="{!directors}" var="dirKey">
+ <apex:outputText value="{!dirKey}" /> --<br/>
+ <apex:repeat value="{!directors[dirKey]}" var="innerKey">
+
+       
+        <apex:outputText value="{!innerKey}" /> --<br/>
+        <apex:outputText value="{!directors[dirKey][innerKey].name}" /><br/>
+</apex:repeat>        
+</apex:repeat>
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:page controller="vfnew">
+<apex:form >
+  <apex:inputfield value="{!a.name}" required="true"/>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,48 @@
+<apex:page controller="exxx">
+<style>
+.ABCD  {display:none}
+.ABCDE {display:none}
+</style>
+<script>
+ window.onload = function() {
+  if({!outboundChecked2 })
+  {
+ 
+  document.getElementById("ABC").checked = true;
+  document.getElementById("ABC").classList.remove('ABCDE');
+  document.getElementById("ABC").classList.remove('ABCDjkk');
+   
+  }
+  else
+  {
+  document.getElementById("AN").checked = true;
+  document.getElementById("AN").classList.remove('ABCDE');
+  document.getElementById("AN").classList.remove('ABCD');
+  }
+  
+  document.getElementById("AN").classList.remove('ABCDE');
+  document.getElementById("AN").classList.remove('ABCD');
+ 
+};
+</script>
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:form >
+   <apex:actionFunction name="closeWindow" action="{!closeWindow}" reRender="questionsdetails"/>
+  <h1>Congratulations</h1>
+   <apex:outputPanel id="questionsdetails">
+  This is your new Page
+  
+   <apex:outputPanel id="questionsdetails1" >
+  <input type="radio" id="AN" name="imgsl" value="" class="ABCDE " />
+   </apex:outputPanel>
+  
+   <apex:outputPanel id="questionsdetails2">
+   
+  <input type="radio" id ="ABC" name="imgsel" value=""   class="ABCD"/>
+  
+   </apex:outputPanel>
+
+  <!-- End Default Content REMOVE THIS -->
+   </apex:outputPanel>
+   </apex:form>
+</apex:page>

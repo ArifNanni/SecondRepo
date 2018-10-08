@@ -1,0 +1,19 @@
+<aura:component controller="CaseSuspendedListController" implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+
+	<aura:attribute name="cases" type="Case[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<ul>
+        <aura:iteration items="{!v.cases}" var="case">
+            <li>
+                
+                    <p>{!case.CaseNumber}</p>
+                    <p>{!case.Owner.Name}</p>
+                <div class="{!case.ID + A}" onclick="{!c.tester}" Id="{!case.Id}" name="Arif">
+                             <lightning:icon class="iconColor" title="{!case.Id}"  iconName="utility:preview" size="small"/>
+                        <img src="#" data-index ="{!case.Id}" alt="ok!!" class="ABC"   value="{!case.ID}"/>
+                </div>
+            </li>
+        </aura:iteration>
+    </ul>
+
+</aura:component>

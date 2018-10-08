@@ -1,0 +1,17 @@
+<apex:page standardController="Opportunity" extensions="abcd"
+    tabStyle="Opportunity" sidebar="false">
+    <p>Enter an alphabetic character for the "Close Date,"
+       then click Save to see what happens.</p>
+       <apex:outputText >hi</apex:outputText>
+    <apex:form >
+      <apex:pageBlock >
+      <apex:pageBlockSection >
+      <apex:inputField value="{!Opportunity.DB_Competitor__c}"/>
+      <apex:inputField value="{!Opportunity.CloseDate}"/>
+      <apex:outputText > {!Opportunity.accountId} </apex:outputText>
+      <apex:message />
+      </apex:pageBlockSection>
+     <apex:commandButton value="submit" action="{!save}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,3 @@
+<aura:component >
+	<lightning:input label=" " class="" name="nationalState" aura:id="nationalState" />
+</aura:component>

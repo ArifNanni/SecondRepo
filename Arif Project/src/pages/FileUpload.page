@@ -1,0 +1,17 @@
+<apex:page standardController="Document" extensions="TestFileUploadPageControllerExtension">
+    <apex:form >  
+        <apex:pageBlock title="Attach file" mode="edit">
+            <apex:pageBlockSection columns="1" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Select a file" for="inputFile"/>
+                    <apex:inputFile id="inputFile" value="{!document.Body}" filename="{!document.Name}" fileSize="{!document.BodyLength}" contentType="{!document.ContentType}" size="40" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+                
+                
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!doAttach}" value="Attach" id="attachButton"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

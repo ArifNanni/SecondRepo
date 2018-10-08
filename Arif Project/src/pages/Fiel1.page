@@ -1,0 +1,38 @@
+<apex:page controller="setAttachment">
+<apex:form >
+<input type="file" id="fileId" name="attFile" value="{!body}"/><br/>
+  <apex:actionFunction name="setAttachment" action="{!setAttachment}" rerender="none" >
+<apex:param name="attachmentBody" value=""/>
+    <apex:param name="attachmentBody" value=""/>
+</apex:actionFunction>
+<button  onclick="goBack()" style='margin-right:16px'>Save</button>
+</apex:form>
+ <script>
+  
+   var body;
+   function getAsText(readFile) {
+    var reader = new FileReader();
+    reader.readAsDataURL(readFile);
+    reader.onload = attLoaded;
+   }
+   function attLoaded(evt) {  
+    var fileString = evt.target.result;
+    body = fileString;
+    var  input = document.getElementById("fileId");
+    var filename= input.value;  
+    var body1 = body;
+    alert('Here'+body);        
+    passToController(body1/*,filename*/);
+   }
+   function remoteLocationPost(){
+    var fbody= document.getElementById("fileId").files[0];
+    getAsText(fbody); 
+    return true;
+   }   
+  </script>
+<script>
+//alert('Hi');
+var attachmentBody = 'a';
+setAttachment(attachmentBody);
+</script>
+</apex:page>

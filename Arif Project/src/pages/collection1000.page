@@ -1,0 +1,12 @@
+<apex:page controller="thousandLimit">    
+   <apex:pageBlock >
+      <apex:repeat value="{!thousandBlocks}" var="block">
+      {!block.blockNumber}AAA 
+            <apex:pageBlockTable value="{!block.Accountss}" var="c">
+            <apex:column value="{!c.Name}"/>
+            <apex:column value="{!c.owner.name}"/>
+                               
+            </apex:pageBlockTable>
+        </apex:repeat>
+     </apex:pageBlock>  
+</apex:page>

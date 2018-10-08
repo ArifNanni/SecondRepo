@@ -1,0 +1,18 @@
+<apex:page controller="method" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:form >
+  
+  
+    <apex:inputText rendered="{!!airf1}" value="{!airf1}"/>
+    <apex:inputText rendered="{!airf1}"/>
+    <apex:inputText rendered="{!airf1}"/>
+    
+       <apex:commandButton value="Save" action="{!save}"/>
+<apex:detail />
+
+  </apex:form>
+ 
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page controller="Reload">
+    <apex:form >
+        <apex:messages />
+        <apex:commandButton action="{!processtempcon}" value="Reload"/>
+    </apex:form>
+</apex:page>

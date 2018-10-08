@@ -1,0 +1,40 @@
+<apex:page controller="ActionFunctionR">
+<script>
+  function complete()
+  {
+   var a = '{!text2}';
+   alert('hiiii'+a);
+   first();
+  }
+  function second1()
+  {
+  alert('hi');
+  second();
+  
+  }
+  </script>
+  <b>APP</b>
+  <br/>
+  
+  <apex:form id="abc">
+  <apex:outputPanel id="abcd"> 
+  First name: <input type="text" name="fname" value="{!text2}"/>
+  <br/>
+   <apex:inputHidden value="{!text2}"/>
+   
+   
+   <br/>
+   <apex:outputtext value="{!text1}"/>
+   <br/>
+    <apex:outputtext value="{!text2}"/>
+  <br/>
+  </apex:outputPanel>
+  <input type="button" value="Verify CVV Code" onclick="second1();return false;"/>
+ 
+  <apex:commandButton value="save" action="{!save}" />
+  <apex:actionFunction action="{!first}" name="first" reRender="abcd,MyContent" />
+  <apex:actionFunction action="{!second}" name="second" reRender="abcd,MyContent"/>
+  </apex:form>
+  
+  
+</apex:page>

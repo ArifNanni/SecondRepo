@@ -1,0 +1,23 @@
+<apex:page controller="MultipleContinutationController" showChat="false" showHeader="false">
+    <apex:form >
+        <!-- Invokes the action method when the user clicks this button. -->
+        <apex:commandButton action="{!startRequestsInParallel}" value="Start Request" reRender="panel"/>  
+    </apex:form>
+    
+    <apex:outputPanel id="panel">
+        <apex:pageBlock id="result" >
+            <apex:pageBlockSection >
+                
+                Result 1 - {!jsonApexURL1}
+                <br/>
+                <br/>
+                <br/>
+                
+                Result 2 - {!jsonApexURL2}
+                
+            </apex:pageBlockSection>        
+            
+        </apex:pageBlock>
+    </apex:outputPanel> 
+    
+</apex:page>

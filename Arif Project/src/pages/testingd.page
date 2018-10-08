@@ -1,0 +1,12 @@
+<apex:page Controller="Sharing_Rule_obj"  Extensions="asdfe">
+<apex:form >
+
+<apex:outputField value="{!st.Company__c}"/>
+<apex:pageBlock >
+
+    <apex:pageBlockTable value="{!lst}" var="a" >
+      <apex:column value="{!a.Company__c}"/>
+    </apex:pageBlockTable>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

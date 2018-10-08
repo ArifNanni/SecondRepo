@@ -1,0 +1,8 @@
+<apex:page standardController="Contact" >
+     <apex:emailPublisher entityId="{!Contact.id}"
+      fromVisibility="selectable"
+       subjectVisibility="readOnly"
+       subject="Your Cirrus support request"       toVisibility="readOnly"
+       toAddresses="{!Contact.email}"
+     emailBody=""/>
+  </apex:page>

@@ -1,0 +1,20 @@
+<apex:page >
+<script>
+function clickk(sum)
+{
+var d =sum;
+var element = document.getElementById('abc').checked = true;
+var element = document.getElementById('abc').checked = false;
+ alert(element + sum);
+ }
+ 
+ 
+
+</script>
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1 id="awe">Congratulations</h1>
+  This is your new Page
+  <input type="radio" id="abc" name="gender" value="male" /> 
+   <input type="submit" onclick="clickk('4')"/>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

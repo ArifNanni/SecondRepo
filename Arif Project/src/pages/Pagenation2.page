@@ -1,0 +1,13 @@
+<apex:page standardcontroller="Opportunity" recordSetVar="hi">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:pageBlock id="pbId" >
+  <apex:pageBlockSection >
+  <apex:pageBlockTable value="{!hi}" var="o">
+  <apex:column value="{!o.Name}"/>
+  </apex:pageBlockTable>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  <h1>Congratulations</h1>
+  This is your new Page: Pagenation2
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

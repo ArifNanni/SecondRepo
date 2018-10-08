@@ -1,0 +1,12 @@
+<apex:page standardController="Account">
+<apex:form >
+<!-- Don't mix a standard input field... -->
+<apex:inputField value="{!account.industry}"/>
+<apex:outputPanel >
+<apex:outputField value="{!account.Pickulistu__c}">
+<!-- ...with an inline-edit enabled dependent field -->
+<apex:inlineEditSupport event="ondblClick" />
+</apex:outputField>
+</apex:outputPanel>
+</apex:form>
+</apex:page>

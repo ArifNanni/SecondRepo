@@ -1,0 +1,13 @@
+<apex:page controller="ReRenderControllr">
+ <!-- Render and Rerender Demo -->
+     <apex:form >
+           <apex:pageBlock >
+                <apex:commandButton value="Refresh Lower Page Block" action="{!ShowBlockMethod}" rerender="pgblckID"/>
+           </apex:pageBlock>
+        
+           <apex:pageBlock id="pgblckID">
+               <b>  Output Text   : </b>   <apex:outputText value="{!OutPutString}"/>
+           </apex:pageBlock>
+     </apex:form>
+
+</apex:page>

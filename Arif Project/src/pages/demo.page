@@ -1,0 +1,8 @@
+<apex:page >
+<body>
+<apex:variable var="Index" value="{!0}"/>
+Apex Variable Index initial Value:{!Index} <br/>
+<apex:variable var="Index" value="{!Index+1}"/>
+Apex Variable Index value after Incrementing:{!Index}
+</body>
+</apex:page>

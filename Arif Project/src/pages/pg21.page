@@ -1,0 +1,6 @@
+<apex:page Controller="Accountpo">
+<apex:pageBlock title="Hello {!$User.FirstName}!">
+You are viewing the {!account.name} 
+</apex:pageBlock>
+<apex:detail subject="{!account.id}" relatedList="true" title="true"/>
+</apex:page>

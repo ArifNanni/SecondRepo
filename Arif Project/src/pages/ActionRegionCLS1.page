@@ -1,0 +1,12 @@
+<apex:page controller="ActionRegionCLS2" >
+ <apex:pagemessages id="msgs"></apex:pagemessages>
+ <apex:form >
+a  <apex:inputText required="true" value="{!a}"/> <br/>
+<apex:actionStatus startText=" (incrementing...)"
+            stopText=" (done)" id="counterStatus" for="fg"/>
+
+b <apex:actionRegion id="fg">  <apex:inputText required="true" value="{!b}"><apex:actionSupport action="{!Add}" reRender="aa" event="onchange"  /></apex:inputText></apex:actionRegion> <br/>
+total <apex:outputText id="aa" value="{!total}"></apex:outputText>
+  <apex:commandButton value="Add" action="{!Add}"/>
+   </apex:form>
+</apex:page>

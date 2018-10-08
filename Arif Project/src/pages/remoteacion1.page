@@ -1,0 +1,181 @@
+<apex:page controller="AccountRemoter1">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<apex:includeScript value="/support/console/42.0/integration.js"/>
+
+<apex:slds />
+</head>
+<style>
+ .acti {
+                font-weight: bold;
+                color: #333;
+                background-color: #f57d62;
+                }
+                .activ {
+                font-weight: bold;
+                color: #333;
+                background-color: #b9e2e4;
+                }
+                
+              .display-none {display:none}
+
+</style>
+   
+    <input id="acctSearch" type="text"/>
+    <button onclick="getRemoteAccount()">Get Account</button>
+    <div id="responseErrors"></div>
+
+    <apex:pageBlock id="block">
+        <apex:pageBlockSection id="blockSection" columns="2">
+                       
+               
+            
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    <div id="positionDetails" >
+ 
+         <!-- Position details is displayed here. -->
+ 
+   </div>
+    <apex:form id="form_id">
+      
+      <apex:actionFunction name="echo" action="{!echoVal}" reRender="resultPanel" status="myStatus">
+      <apex:param name="firstParam" assignTo="{!enteredText1}" value="" />
+      <apex:param name="secondParam" assignTo="{!enteredText2}" value="" />
+      </apex:actionFunction>
+      </apex:form>
+     <script type="text/javascript">
+      var $j = jQuery.noConflict();
+      
+     
+     
+    
+     
+    function getRemoteAccount() {
+     
+     var abcdef;
+       
+        var accountName = document.getElementById('acctSearch').value;
+
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.AccountRemoter1.getAccount}',
+            accountName, 
+            function(lstresult, event){
+                if (event.status) {
+               // alert('lstresult'+lstresult);
+                abcdef = lstresult;
+                   heff(lstresult);
+                   
+                } else if (event.type === 'exception') {
+                    document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                } else {
+                    document.getElementById("responseErrors").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+                   
+               
+    }
+    
+   // function redirectTransaction(str1,str2)
+    function redirectTransaction(str,str2)
+    {
+    str = str.replace(/@@@/g, '"');
+
+    alert('omg'+str);
+    alert('omg'+str2);
+     
+     $j("#head"+str2).addClass('activ');
+     str2 = document.getElementById("acctNumEmployees1"+str2).value;
+     alert('to update'+str2);
+     echo(str,str2);
+
+    }
+    
+        function heff(lstresult)
+        {
+          var html = '<table> ';
+          html = html + '<th> Record Id </th>';
+          html = html + '<th> Account Number </th>';
+          html = html + '<th> Employee Id </th>';
+          html = html + '<th> Button </th>';
+          html = html + '<th> Is Updated  </th>';
+          for (var n=0; n<lstresult.length; n++){
+          var result = lstresult[n]; 
+           
+                     html = html + '<tr >';
+                     html = html + '<td>';
+                    
+                   html = html + '<output type="text" id="remoteAcctId'+(n+1)+'">';
+                   html = html +  result.Id;
+                   html = html + '<output>';
+                   
+                   html = html + '</td>';
+                   
+                     html = html + '<td>';
+                    
+                   html = html + '<output type="text" id="remoteAcctId'+(n+1)+'">';
+                   html = html +  result.AccountNumber;
+                   html = html + '<output>';
+                   
+                   html = html + '</td>';
+                   
+                    
+                                     
+                   html = html + '<td>';
+                    
+                   html = html + '<input type="text" id="acctNumEmployees1'+(n+1)+'"';
+                   if(result.NumberOfEmployees == undefined)
+                   {
+                   html = html + ' ' + 'value =' + ' ';
+                   }
+                   else
+                   {
+                   html = html + ' ' + 'value =' + result.NumberOfEmployees;
+                   }
+                   html=  html +'\>';
+                   
+                   html = html + '</td>';
+                   var result1 = JSON.stringify(result);
+               
+              result1 ='\''+ result1+'\'';
+              result1 = result1.replace(/"/g, '@@@');
+             
+                   alert(result1 );
+                   
+                   
+                   html = html + '<td> <input type="button" name='+result1 +' '+' class="slds-button slds-button_brand" value="Update" onclick=\"redirectTransaction( ';
+                   html = html +  result1+','+'\''+(n+1)+'\'';
+              
+                   html = html + ')'+"\""+'/>'+ ' </td>';
+                   html = html + '<td> <h1 id="head'+(n+1)+'" '+' class="A1 A2"> updated </h1> </td>';
+               
+                
+                   
+                   html = html + '</tr>';
+                   
+                
+                  
+                
+ 
+                                
+                    
+                   }
+                   
+                   html = html + '</table>'; 
+                   console.log('html'+html);
+                   alert('html'+html);
+
+                   document.getElementById('positionDetails').innerHTML = html;
+                   
+                     $j(".A1").addClass('acti');
+          }
+    </script>
+</html>
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page sidebar="false" controller="MemberPopup" >
+<apex:form >
+    <apex:pageBlock id="membAdd" >                  
+        <apex:pageblockSection >
+            <apex:pageBlockTable value="{!memberAddList}" var="memb">
+                <apex:column headerValue="Member Name">
+                    <apex:inputText value="{!memb.LastName}"/>
+                </apex:column>
+                
+                <apex:column headerValue="eMail Id">
+                    <apex:inputField value="{!memb.Email}"/>
+                </apex:column>
+            </apex:pageBlockTable> 
+            <br/><apex:commandLink value="Add Row" action="{!addRow}" reRender="membAdd"/>        
+        </apex:pageblockSection>        
+        <apex:pageblockSection columns="1" >
+            <apex:pageblockSectionItem >
+                <apex:commandButton value="Save" action="{!upserti}"/>
+                <apex:commandButton value="Cancel" />
+            </apex:pageblockSectionItem>         
+        </apex:pageblockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

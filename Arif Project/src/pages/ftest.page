@@ -1,0 +1,10 @@
+<apex:page controller="aeryt" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:form >
+  <apex:outputText value="{!b}"></apex:outputText>
+   <apex:commandButton action="{!a}" value="save"/>
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

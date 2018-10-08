@@ -1,0 +1,24 @@
+<apex:page >
+    <A HREF="#" onClick="testSetTabIcon();return false">
+         Click here to change the enclosing tab’s icon</A> <BR/>
+    <A HREF="#" onClick="testResetTabIcon(); return false;">
+         Click here to reset the enclosing tab’s icon</A>
+
+    <apex:includeScript value="/support/console/42.0/integration.js"/>
+    <script type="text/javascript">
+        function checkResult(result) { 
+            if (result.success) {
+               alert('Tab icon set successfully!');
+            } else {
+               alert('Tab icon cannot be set!');
+            }
+    }
+        function testSetTabIcon() {
+            sforce.console.setTabIcon('http://host/path/to/your/icon.png', null, checkResult);
+    }
+        function testResetTabIcon() {
+        alert('Tab icon cannot be set!');
+            sforce.console.setTabIcon(null, null, checkResult);
+    }
+    </script>
+</apex:page>

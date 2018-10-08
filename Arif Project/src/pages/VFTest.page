@@ -1,0 +1,21 @@
+<apex:page controller="VFPAGETEST">
+<script>
+alert('OHi'+{!btest });
+function abc()
+{
+alert('Hi'+{!btest});
+var a;
+a=a+4;
+alert(document.getElementById('{!$Component.j_id0.j_id2.traditionalQusSeqNumAndAns}').value);
+}
+</script>
+  
+  <apex:outputPanel id="panelId">
+  <apex:form >
+  <apex:commandButton action="{!Hello}"  value="Save" onclick="abc();" oncomplete="abc();"  reRender="panelId"/>
+  <apex:outputText value="abc" id="traditionalQusSeqNumAndAns"/>
+
+  </apex:form>
+  </apex:outputPanel>
+       
+</apex:page>

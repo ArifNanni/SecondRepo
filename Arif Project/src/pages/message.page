@@ -1,0 +1,20 @@
+<apex:page controller="MyRegisterCon2" sidebar="false" docType="HTML-5.0"   >
+ 
+<apex:form >
+  <apex:pageBlock >
+  <apex:pageblockSection columns="1" >
+   <apex:pagemessages />
+   
+  <apex:inputtext value="{!FirstName}" label="First Name"  />
+  <apex:inputtext value="{!LastName}" label="Last Name" />
+  <apex:input value="{!Jdate}" label="DOB" type="date" />
+  <apex:message for="phone" />
+ 
+  <apex:inputtext value="{!Phone}" label="Phone"  id="phone"/>
+  </apex:pageblockSection>
+  <apex:pageBlockButtons >
+  <apex:commandButton value="submit" action="{!save}" />
+  </apex:pageBlockButtons>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

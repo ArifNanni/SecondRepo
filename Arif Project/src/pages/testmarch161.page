@@ -1,0 +1,16 @@
+<apex:page controller="qwe">
+    
+Render a VF page based on a criteria
+<apex:form >
+<apex:pageBlock id="xxxpb1">
+    <apex:commandButton action="{!save}" value="Save" id="theButton"/>
+
+  <apex:pageBlockSection >
+  <apex:pageBlockSectionItem ><apex:outputText rendered="{!ho}" >hi</apex:outputText> </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem > <apex:inputText value="{!hi}"/></apex:pageBlockSectionItem>
+   
+  </apex:pageBlockSection>
+  
+</apex:pageBlock>
+</apex:form>
+</apex:page>

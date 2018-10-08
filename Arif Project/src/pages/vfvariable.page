@@ -1,0 +1,17 @@
+<apex:page controller="repeatCon">
+
+       <apex:form >
+
+           <apex:variable var="count" value="{!1}"   />        <!-- Initialise-->
+
+             <apex:repeat value="{!StringsVal}" var="acc">
+
+                      <apex:outputText value="{!acc}"  />
+                      <apex:outputText value="{!count}"  />
+                      <apex:variable value="{!count+1}" var="count"/>  <!--increment-->
+
+              </apex:repeat>
+
+       </apex:form>
+
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page >
+  html<h1> ABC </h1><br/> <span id="remoteAcctId11" value="4" /> <br/> <output type="text" id="acctNumEmployees11"> g</output >
+  <input type="text" id="acctNumEmployees11"  value="4"/>
+  <script>
+    alert(document.getElementById("acctNumEmployees11").value);
+  </script>
+</apex:page>

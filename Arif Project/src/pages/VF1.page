@@ -1,0 +1,4 @@
+<apex:page language="en" >
+  <apex:pageblock title="{!$Label.vijay}"> 
+  </apex:pageblock>
+</apex:page>

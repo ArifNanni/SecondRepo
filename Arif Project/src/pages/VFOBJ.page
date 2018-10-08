@@ -1,0 +1,16 @@
+<apex:page Controller="VFOBJ">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  
+  <apex:form >
+   <apex:inputField value="{!VF.Text1__c}" />
+   <apex:inputField value="{!VF.Text2__c}" />
+   <apex:inputField value="{!VF.Text3__c}" />
+   <br/>===============<br/>
+   <apex:inputText value="{!str1}" />
+   <apex:inputText value="{!str2}" />
+   <apex:inputText value="{!str3}" />
+  </apex:form>
+  
+</apex:page>

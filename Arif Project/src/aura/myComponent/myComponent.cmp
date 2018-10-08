@@ -1,0 +1,6 @@
+<aura:component >
+	<aura:attribute name="contactName" type="String"  />
+    <H1>
+       This other component, Created by  {!v.contactName}
+    </H1>
+</aura:component>

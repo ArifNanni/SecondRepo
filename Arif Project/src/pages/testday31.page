@@ -1,0 +1,6 @@
+<apex:page >
+<style type="text/css">
+[id*=myIjd] { font-weight: bold; }
+</style>
+<apex:outputText id="myIjd" value="This is way fancy !"/>
+</apex:page>

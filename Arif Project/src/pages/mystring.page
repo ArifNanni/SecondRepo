@@ -1,0 +1,6 @@
+<apex:page controller="mycontroller">
+
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1> {!myString},{!Method1},{!Method2},{!myString} </h1>
+
+</apex:page>

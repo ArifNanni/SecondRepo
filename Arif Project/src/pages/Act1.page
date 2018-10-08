@@ -1,0 +1,5 @@
+<apex:page StandardController="Account">
+<apex:form >
+ <apex:inputField value="{!Account.NEWPICK__c}"/>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,8 @@
+<apex:page controller="PagesController">
+    <apex:pageBlock title="Page 2">
+        <apex:pageBlockSection title="Section" columns="2">
+            <apex:outputField value="{!Account.Name}"/>
+            <apex:outputField value="{!Contact.FirstName}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

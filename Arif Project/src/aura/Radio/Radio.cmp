@@ -1,0 +1,30 @@
+<aura:component >
+    <fieldset class="slds-form-element">
+        <legend class="slds-form-element__legend slds-form-element__label">Radio Group Label</legend>
+        <div class="slds-form-element__control">
+            <span class="slds-radio">
+                <input type="radio" id="radio-3" name="options" value="radio-3" />
+                <label class="slds-radio__label" for="radio-3">
+                    <span class="slds-radio_faux"></span>
+                    <span class="slds-form-element__label">Radio Label One</span><br/>
+                    hj
+                </label>
+            </span>
+            <span class="slds-radio">
+                <input type="radio" id="radio-4" name="options" value="radio-4" />
+                <label class="slds-radio__label" for="radio-4">
+                    <span class="slds-radio_faux"></span>
+                    <span class="slds-form-element__label">Radio Label Two<br/> hi</span>
+                   
+                </label>
+            </span>
+        </div>
+    </fieldset>
+    <lightning:input type="radio" name="Radio" 
+    label="Radio" value="true" />
+    <lightning:input type="radio" name="select" value="false" label="a"  />
+<lightning:input type="radio" name="select" value="false" label="b"   checked="true"/>
+<lightning:input type="radio" name="select" value="true" label="c" checked="true" />
+  
+
+</aura:component>

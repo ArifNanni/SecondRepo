@@ -1,0 +1,6 @@
+<apex:page standardController="Account" renderAs="pdf">
+     <apex:pageBlock >
+          <apex:outputField value="{!Account.name}"/>
+          <apex:outputField value="{!Account.AccountNumber}"/>
+     </apex:pageBlock>
+</apex:page>

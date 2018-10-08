@@ -1,0 +1,9 @@
+<apex:page standardcontroller="case" sidebar="false"
+           showHeader="false"
+           showChat="false">
+  <script>
+alert('Sorry you account create a new Account');
+
+
+</script>
+</apex:page>

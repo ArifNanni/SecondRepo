@@ -1,0 +1,35 @@
+<apex:page id="pgid" controller="InputFileUsingHtmlJavaScript">
+ <apex:form id="frm">
+  <input type="file" id="fileId" name="attFile" value="{!body}"/><br/>
+  <apex:actionFunction name="passToController" action="{!doAttachment}" reRender="none">
+   <apex:param name="body" value="" assignTo="{!body}"/>
+   <!-- apex:param name="fname" value="" assignTo="{!filename}" /-->
+   
+  </apex:actionFunction>
+  <button  onclick="remoteLocationPost()" style='margin-right:16px'>Save</button>
+  
+  <script>
+  
+   var body;
+   function getAsText(readFile) {
+    var reader = new FileReader();
+    reader.readAsDataURL(readFile);
+    reader.onload = attLoaded;
+   }
+   function attLoaded(evt) {  
+    var fileString = evt.target.result;
+    body = fileString;
+    var  input = document.getElementById("fileId");
+    var filename= input.value;  
+    var body1 = body;
+    alert('Here'+body);        
+    passToController(body1/*,filename*/);
+   }
+   function remoteLocationPost(){
+    var fbody= document.getElementById("fileId").files[0];
+    getAsText(fbody); 
+    
+   }   
+  </script>
+ </apex:form>
+</apex:page>

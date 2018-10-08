@@ -1,0 +1,62 @@
+<aura:component controller="recordtypeController" implements="lightning:actionOverride,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome"   access="global">    
+   <aura:handler name="init" value="{!this}" action="{!c.fetchListOfRecordTypes}"/>
+    <aura:attribute name="options" type="List" default="[
+        {'label': 'Option1', 'value': '1'},
+        {'label': 'Option2', 'value': '2'}
+    ]"/>
+
+    <aura:attribute name="radioGrpValue" type="String" />
+    <aura:attribute name="isCaseRecordType" type="boolean" default="false" />
+    <aura:attribute name="lstOfRecordType" type="String[]" />
+    <aura:attribute name="isOpen" type="boolean" default="false" />
+    <aura:attribute name="isNotDefault" type="boolean" default="false" />
+    <aura:attribute name="DefaultRecordTypeName"  type="String" />
+     <aura:attribute name="RecordTypeName" type="String" default="recordtype" />
+  <!--
+    <lightning:radioGroup
+        aura:id="radioGrp"
+        name="radioButtonGroup"
+        label="Choose Your Option"
+        options="{! v.options }"
+        value="{! v.radioGrpValue }"
+        onchange="{! c.handleChange }"
+    /> -->
+   
+    
+     <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+                        X<span class="slds-assistive-text">Cancel</span>
+                    </button>
+                    <h2 id="header43" class="slds-text-heading--medium">New Case</h2>
+                </div>
+                
+                
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-size--1-of-2 slds-large-size--1-of-2">
+                           
+                            <div class="slds-align--absolute-center">Select a Record Type</div>                            
+                        </div>
+                        <div class="slds-size--1-of-2 slds-large-size--1-of-2">
+                            <span class="slds-checkbox">
+                               <aura:iteration items="{!v.lstOfRecordType}" var="contact">
+                                   <ui:inputRadio aura:id="{!contact}" text="{!contact}" name="others" label="" change="{!c.onGroup}" value="{!}"/> &nbsp; &nbsp; {!contact}   <br/><br/> 
+                        
+                               </aura:iteration>
+                           </span>
+                        </div>&nbsp; &nbsp;
+                    </div>                   
+                </div>
+                
+                <div class="slds-modal__footer">
+                    <lightning:button class="slds-button slds-button--neutral" onclick="{!c.closeModal}">Cancel</lightning:button>
+                    <lightning:button class="slds-button slds-button--brand" onclick="{!c.createRecord}">Next</lightning:button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        
+
+</aura:component>

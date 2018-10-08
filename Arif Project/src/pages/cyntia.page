@@ -1,0 +1,8 @@
+<apex:page controller="position">
+  <apex:form >
+  <apex:outputLabel >Enter Hiring_manager</apex:outputLabel>
+  <apex:inputtext value="{!Hiring_manager}"/>
+  <apex:commandButton value="Click" reRender="one"/>
+  <apex:outputLabel id="one">your manager name is {!Hiring_manager}</apex:outputLabel>
+  </apex:form>
+</apex:page>

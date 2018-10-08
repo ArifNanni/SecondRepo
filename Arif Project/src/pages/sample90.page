@@ -1,0 +1,13 @@
+<apex:page controller="derf">
+
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:outputPanel >
+  <h1 >Congratulations</h1> {!fg}
+  <apex:form >
+  <apex:commandButton onclick="hjon()" value="jkkkk"  />
+  </apex:form>
+  This is your new Page
+  
+  </apex:outputPanel>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page controller="uploadFile">
+<apex:messages />
+<apex:form enctype="multipart/form-data" >
+<apex:pageBlock title="Contribute Content" >
+<apex:commandbutton action="{!upload}" value="Publish" status="status"/>
+<apex:pageBlockSection columns="1">
+<apex:pageBlockSectionItem >
+<apex:outputLabel > Title </apex:outputLabel>
+<apex:inputTextarea value="{!title}"/>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:inputFile value="{!file}" fileName="{!fN}" contentType="{!Type}" />
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

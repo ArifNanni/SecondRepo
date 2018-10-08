@@ -1,0 +1,24 @@
+<apex:page controller="testgetset" >
+<script>
+var d = '{!gh}';
+alert('kkk'+d);
+function setForm()
+{
+alert("Hio"+document.getElementById("{!$Component.j_id0.Hello.Hi}"));
+var fj7 = document.getElementById("{!$Component.j_id0.Hello.Hi}").innerHTML;
+
+alert('inkkk'+'{!gh}');
+}
+</script>
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+  
+  <apex:outputpanel id="abc">
+  <apex:form id="Hello">
+   <apex:commandButton value="save" action="{!hj}" oncomplete="setForm()" reRender="abc"/>
+   <apex:outputText value="{!gh}" id="Hi" />
+  </apex:form>
+  </apex:outputpanel>
+</apex:page>
